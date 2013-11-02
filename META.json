@@ -37,14 +37,14 @@
       },
       "runtime" : {
          "recommends" : {
-            "Sub::Name" : "0",
-            "Variable::Magic" : "0"
+            "Sentinel" : "0",
+            "Sub::Name" : "0"
          },
          "requires" : {
             "perl" : "5.006000"
          },
          "suggests" : {
-            "Sentinel" : "0"
+            "Variable::Magic" : "0"
          }
       },
       "test" : {
@@ -56,23 +56,23 @@
    "provides" : {
       "LV" : {
          "file" : "lib/LV.pm",
-         "version" : "0.004"
+         "version" : "0.005"
       },
       "LV::Backend::Magic" : {
          "file" : "lib/LV/Backend/Magic.pm",
-         "version" : "0.004"
+         "version" : "0.005"
       },
       "LV::Backend::Sentinel" : {
          "file" : "lib/LV/Backend/Sentinel.pm",
-         "version" : "0.004"
+         "version" : "0.005"
       },
       "LV::Backend::Tie" : {
          "file" : "lib/LV/Backend/Tie.pm",
-         "version" : "0.004"
+         "version" : "0.005"
       },
       "LV::Backend::Tie::TiedScalar" : {
          "file" : "lib/LV/Backend/Tie.pm",
-         "version" : "0.004"
+         "version" : "0.005"
       }
    },
    "release_status" : "stable",
@@ -90,5 +90,5 @@
          "web" : "https://github.com/tobyink/p5-lv"
       }
    },
-   "version" : "0.004"
+   "version" : "0.005"
 }
