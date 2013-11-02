@@ -12,6 +12,7 @@ README
 SIGNATURE
 dist.ini
 doap.ttl
+examples/benchmarking.pl
 lib/LV.pm
 lib/LV/Backend/Magic.pm
 lib/LV/Backend/Sentinel.pm

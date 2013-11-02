@@ -26,7 +26,7 @@
 	doap:maintainer      <http://purl.org/NET/cpan-uri/person/tobyink>;
 	doap:name            "LV";
 	doap:programming-language "Perl";
-	doap:release         <http://purl.org/NET/cpan-uri/dist/LV/v_0-001>;
+	doap:release         <http://purl.org/NET/cpan-uri/dist/LV/v_0-001>, <http://purl.org/NET/cpan-uri/dist/LV/v_0-002>;
 	doap:repository      [
 		a doap:GitRepository;
 		doap:browse <https://github.com/tobyink/p5-lv>;
@@ -41,6 +41,29 @@
 	doap-changeset:released-by <http://purl.org/NET/cpan-uri/person/tobyink>;
 	doap:file-release    <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/LV-0.001.tar.gz>;
 	doap:revision        "0.001"^^xsd:string.
+
+<http://purl.org/NET/cpan-uri/dist/LV/v_0-002>
+	a                    doap:Version;
+	dc:identifier        "LV-0.002"^^xsd:string;
+	dc:issued            "2013-11-02"^^xsd:date;
+	doap-changeset:changeset [
+		doap-changeset:item [
+			a doap-changeset:Change;
+			rdfs:label "Prefer LV::Backend::Sentinel over LV::Backend::Magic when auto-selecting a backend implementation.";
+		], [
+			a doap-changeset:Change;
+			rdfs:label "Major speed improvements for LV::Backend::Magic.";
+		], [
+			a doap-changeset:Change;
+			rdfs:label "Minor speed improvements for LV::Backend::Tie.";
+		], [
+			a doap-changeset:Documentation;
+			rdfs:label "Bundle benchmarking script.";
+		];
+	];
+	doap-changeset:released-by <http://purl.org/NET/cpan-uri/person/tobyink>;
+	doap:file-release    <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/LV-0.002.tar.gz>;
+	doap:revision        "0.002"^^xsd:string.
 
 <http://purl.org/NET/cpan-uri/person/tobyink>
 	a                    foaf:Person;

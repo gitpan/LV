@@ -5,10 +5,16 @@ use warnings;
 package LV::Backend::Magic;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.001';
+our $VERSION   = '0.002';
 
 use Carp;
 use Variable::Magic qw( wizard cast );
+
+my $wiz = wizard(
+	data => sub { $_[1] },
+	set  => sub { $_[1]{set}->(${ $_[0] }); 0 },
+	get  => sub { ${ $_[1]{var} } = $_[1]{get}->(); 0 },
+);
 
 sub lvalue :lvalue
 {
@@ -17,12 +23,8 @@ sub lvalue :lvalue
 	$args{get} ||= sub { require Carp; Carp::croak("$caller is writeonly") };
 	$args{set} ||= sub { require Carp; Carp::croak("$caller is readonly") };
 	
-	my $var;
-	my $wiz  = wizard(
-		set => sub { $args{set}->(${ $_[0] }); 0 },
-		get => sub { $var = $args{get}->(); 0 },
-	);
-	cast($var, $wiz);
+	$args{var} = \(my $var);
+	cast($var, $wiz, \%args);
 	$var;
 }
 

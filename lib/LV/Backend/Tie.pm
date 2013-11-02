@@ -5,7 +5,7 @@ use warnings;
 package LV::Backend::Tie;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.001';
+our $VERSION   = '0.002';
 
 sub lvalue :lvalue
 {
@@ -17,7 +17,7 @@ sub lvalue :lvalue
 package LV::Backend::Tie::TiedScalar;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.001';
+our $VERSION   = '0.002';
 our @CARP_NOT  = qw( LV LV::Backend::Tie );
 
 sub getter { $_[0][0] = $_[1] if @_ > 1; $_[0][0] }
@@ -33,8 +33,8 @@ sub TIESCALAR
 	my ($get, $set) = @_;
 	$self->throw("requires ~get or ~set block") unless $get || $set;
 	
-	$self->getter($get) if $get;
-	$self->setter($set) if $set;
+	$self->[0] = $get if $get;
+	$self->[1] = $set if $set;
 	
 	return $self;
 }
@@ -42,14 +42,14 @@ sub TIESCALAR
 sub FETCH
 {
 	my $self = shift;
-	my $code = $self->getter or $self->throw("is writeonly");
+	my $code = $self->[0] or $self->throw("is writeonly");
 	goto $code;
 }
 
 sub STORE
 {
 	my $self = shift;
-	my $code = $self->setter or $self->throw("is readonly");
+	my $code = $self->[1] or $self->throw("is readonly");
 	goto $code;
 }
 

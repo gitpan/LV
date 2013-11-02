@@ -5,7 +5,7 @@ use warnings;
 package LV;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.001';
+our $VERSION   = '0.002';
 
 BEGIN {
 	*_subname = eval { require Sub::Name }
@@ -53,8 +53,8 @@ if ( $ENV{PERL_LV_IMPLEMENTATION} )
 else
 {
 	my @implementations = qw(
-		LV::Backend::Magic
 		LV::Backend::Sentinel
+		LV::Backend::Magic
 		LV::Backend::Tie
 	);
 	
