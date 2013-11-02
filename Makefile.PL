@@ -27,11 +27,11 @@ my $meta = {
                         test      => { requires => { "Test::More" => 0.62 } },
                       },
   "provides"       => {
-                        "LV" => { file => "lib/LV.pm", version => 0.002 },
-                        "LV::Backend::Magic" => { file => "lib/LV/Backend/Magic.pm", version => 0.002 },
-                        "LV::Backend::Sentinel" => { file => "lib/LV/Backend/Sentinel.pm", version => 0.002 },
-                        "LV::Backend::Tie" => { file => "lib/LV/Backend/Tie.pm", version => 0.002 },
-                        "LV::Backend::Tie::TiedScalar" => { file => "lib/LV/Backend/Tie.pm", version => 0.002 },
+                        "LV" => { file => "lib/LV.pm", version => 0.003 },
+                        "LV::Backend::Magic" => { file => "lib/LV/Backend/Magic.pm", version => 0.003 },
+                        "LV::Backend::Sentinel" => { file => "lib/LV/Backend/Sentinel.pm", version => 0.003 },
+                        "LV::Backend::Tie" => { file => "lib/LV/Backend/Tie.pm", version => 0.003 },
+                        "LV::Backend::Tie::TiedScalar" => { file => "lib/LV/Backend/Tie.pm", version => 0.003 },
                       },
   "release_status" => "stable",
   "resources"      => {
@@ -41,7 +41,7 @@ my $meta = {
                         repository   => { type => "git", web => "https://github.com/tobyink/p5-lv" },
                         X_identifier => "http://purl.org/NET/cpan-uri/dist/LV/project",
                       },
-  "version"        => 0.002,
+  "version"        => 0.003,
 };
 
 my %dynamic_config;
