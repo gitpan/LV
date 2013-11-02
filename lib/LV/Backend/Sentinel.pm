@@ -5,19 +5,20 @@ use warnings;
 package LV::Backend::Sentinel;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.003';
+our $VERSION   = '0.004';
 
 use Sentinel;
 
 sub lvalue :lvalue
 {
 	my %args = @_;
-	my $caller = (caller(1))[3];
-	$args{get} ||= sub { "$caller is writeonly" };
-	$args{set} ||= sub { "$caller is readonly" };
-	
-	@_ = %args;
-	goto \&sentinel;
+	unless ($args{set} && $args{get})
+	{
+		my $caller = (caller(1))[3];
+		$args{get} ||= sub { require Carp; Carp::croak("$caller is writeonly") };
+		$args{set} ||= sub { require Carp; Carp::croak("$caller is readonly") };
+	}
+	sentinel(%args);
 }
 
 1;

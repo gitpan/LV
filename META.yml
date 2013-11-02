@@ -25,19 +25,19 @@ optional_features: {}
 provides:
   LV:
     file: lib/LV.pm
-    version: 0.003
+    version: 0.004
   LV::Backend::Magic:
     file: lib/LV/Backend/Magic.pm
-    version: 0.003
+    version: 0.004
   LV::Backend::Sentinel:
     file: lib/LV/Backend/Sentinel.pm
-    version: 0.003
+    version: 0.004
   LV::Backend::Tie:
     file: lib/LV/Backend/Tie.pm
-    version: 0.003
+    version: 0.004
   LV::Backend::Tie::TiedScalar:
     file: lib/LV/Backend/Tie.pm
-    version: 0.003
+    version: 0.004
 recommends:
   Sub::Name: 0
   Variable::Magic: 0
@@ -49,4 +49,4 @@ resources:
   homepage: https://metacpan.org/release/LV
   license: http://dev.perl.org/licenses/
   repository: https://github.com/tobyink/p5-lv
-version: 0.003
+version: 0.004
