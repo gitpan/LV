@@ -24,14 +24,14 @@ my $meta = {
                                        requires   => { perl => "5.006000" },
                                        suggests   => { "Variable::Magic" => 0 },
                                      },
-                        test      => { requires => { "Test::More" => 0.62 } },
+                        test      => { requires => { "Test::More" => 0.47 } },
                       },
   "provides"       => {
-                        "LV" => { file => "lib/LV.pm", version => 0.005 },
-                        "LV::Backend::Magic" => { file => "lib/LV/Backend/Magic.pm", version => 0.005 },
-                        "LV::Backend::Sentinel" => { file => "lib/LV/Backend/Sentinel.pm", version => 0.005 },
-                        "LV::Backend::Tie" => { file => "lib/LV/Backend/Tie.pm", version => 0.005 },
-                        "LV::Backend::Tie::TiedScalar" => { file => "lib/LV/Backend/Tie.pm", version => 0.005 },
+                        "LV" => { file => "lib/LV.pm", version => 0.006 },
+                        "LV::Backend::Magic" => { file => "lib/LV/Backend/Magic.pm", version => 0.006 },
+                        "LV::Backend::Sentinel" => { file => "lib/LV/Backend/Sentinel.pm", version => 0.006 },
+                        "LV::Backend::Tie" => { file => "lib/LV/Backend/Tie.pm", version => 0.006 },
+                        "LV::Backend::Tie::TiedScalar" => { file => "lib/LV/Backend/Tie.pm", version => 0.006 },
                       },
   "release_status" => "stable",
   "resources"      => {
@@ -41,7 +41,7 @@ my $meta = {
                         repository   => { type => "git", web => "https://github.com/tobyink/p5-lv" },
                         X_identifier => "http://purl.org/NET/cpan-uri/dist/LV/project",
                       },
-  "version"        => 0.005,
+  "version"        => 0.006,
 };
 
 my %dynamic_config;
